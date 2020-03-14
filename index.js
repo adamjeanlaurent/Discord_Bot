@@ -1,6 +1,17 @@
+const fs = require('fs');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const { prefix, token } = require('./config.json');
+
+client.commands = new Discord.Collection();
+
+const commandFiles = fs.readdirSync('/commands').filter(file => file.endsWith('.js'));
+
+for(const file of commandFiles) {
+    const command = require(`./commands/${file}`);
+    client.commands.set(command.name, command);
+}
+
 const eightBall = require('./commands/8ball');
 const info = require('./commands/info');
 const error = require('./helpers/error');
@@ -30,8 +41,7 @@ client.on('message', message => {
          }
 
          return message.channel.send(info.getMultipleUserInfo(message));
-         
-         
+        
      }
 
      else if(command === 'serverinfo') {
@@ -39,7 +49,7 @@ client.on('message', message => {
      }
 
      else if(command === 'random') {
-         if(!args.length) {
+         if(!args.length) {33
            return message.channel.send(error.invalidNumOfArgs(1, 'UpperBound'));
          }
 
@@ -49,7 +59,6 @@ client.on('message', message => {
         }
     
         return message.channel.send(random.randomNumberBetweenBounds(1, upperBound));
-        
          
      }
      
