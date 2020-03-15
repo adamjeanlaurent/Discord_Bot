@@ -13,6 +13,7 @@ for(const file of commandFiles) {
     client.commands.set(commandName , command);
 }
 
+
 // when the client is ready, run this code
 // this event will only trigger one time after logging in
 client.once('ready', () => {
@@ -28,7 +29,7 @@ client.on('message', message => {
     if(!client.commands.has(command)) {
         return;
     }
-
+    
     try {
         client.commands.get(command).execute(message, args);
     }
@@ -36,6 +37,7 @@ client.on('message', message => {
     catch {
         message.reply('Error Occurred!');
     }
+
 });
 
 client.login(token);
