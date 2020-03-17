@@ -15,14 +15,14 @@ exports.execute = (message, args) => {
         'It Really Be Like That Sometimes.',
         'The World May Never Know.',
         'You Already Know The Answer To That.',
-        'That A Yikes From Me Chief',
-        'It EEZ what IT EEZ',
-        'Big OOF',
-        'My Reply Is No',
+        'That A Yikes From Me Chief.',
+        'It EEZ what IT EEZ.',
+        'Big OOF.',
+        'My Reply Is No.',
         'Why Would You Even Ask Me That.',
         'Try Again Later.',
-        'Signs Point To Yes',
-        'Not Looking Likely',
+        'Signs Point To Yes.',
+        'Not Looking Likely.',
         'Wow...' 
     ];
     

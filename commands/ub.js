@@ -1,11 +1,12 @@
 const error = require('../errors/errors');
 const unirest = require("unirest");
-const {UB_Api_Key} = require('../config.json');
+const {Rapid_Api_Key} = require('../config.json');
 
 exports.execute = (message, args) => {
     if(args.length == 0) {
         return message.channel.send(error.invalidNumOfArgs(1, '{Term}'));
     }
+    
     let term = '';
 
     while(args.length) {
@@ -19,10 +20,10 @@ exports.execute = (message, args) => {
     req.query({
         "term": term
     });
-
+    
     req.headers({
         "x-rapidapi-host": "mashape-community-urban-dictionary.p.rapidapi.com",
-        "x-rapidapi-key": UB_Api_Key
+        "x-rapidapi-key": Rapid_Api_Key
     });
     // call api
     req.end(function (res) {
@@ -33,7 +34,7 @@ exports.execute = (message, args) => {
         // otherwise, grab the definiiton and example, and send them to the channel
         let topDefinition = res.body.list[0].definition;
         let topExample = res.body.list[0].example;
-        let fullMessage = `${topDefinition}\n\n Example:\n${topExample}`
+        let fullMessage = `${topDefinition}\n\nExample:\n${topExample}`
         return message.channel.send(fullMessage);
     }); 
 };
