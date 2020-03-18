@@ -1,6 +1,6 @@
 // https://github.com/R3l3ntl3ss/Meme_Api
 // Note: Api is a bit slow
-const request = require('request');
+const request = require('request'); // deprecated
 const error = require('../errors/errors');
 
 exports.execute = (message, args) => {
