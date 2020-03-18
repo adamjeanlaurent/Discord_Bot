@@ -12,7 +12,6 @@ exports.execute = (message, args) => {
     let url = `https://meme-api.herokuapp.com/gimme/${subreddit}`;
 
     request(url, (error, response, body) => {
-        console.log(body);
         if(error) {
             return message.channel.send("Error Couldn't Find That Subreddit.");
         }
