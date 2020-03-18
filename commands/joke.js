@@ -17,7 +17,7 @@ exports.execute = (message, args) => {
 
     req.end(function (res) {
         if(res.error || Object.keys(res.body).length === 0) {
-        return message.channel.send('Error Finding Joke');
+            return message.channel.send('Error Finding Joke');
         }
         let jokeSetup = res.body.setup;
         let jokeDelivery = res.body.delivery;

@@ -13,7 +13,6 @@ for(const file of commandFiles) {
     client.commands.set(commandName , command);
 }
 
-
 // when the client is ready, run this code
 // this event will only trigger one time after logging in
 client.once('ready', () => {
