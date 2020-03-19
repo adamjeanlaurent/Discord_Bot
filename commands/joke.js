@@ -16,7 +16,7 @@ exports.execute = (message, args) => {
     });
 
     req.end(function (res) {
-        if(res.error || Object.keys(res.body).length === 0) {
+        if(res.error || res.body.setup === undefined) {
             return message.channel.send('Error Finding Joke');
         }
         let jokeSetup = res.body.setup;
