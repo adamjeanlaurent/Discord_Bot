@@ -37,4 +37,4 @@ exports.execute = (message, args) => {
         let fullMessage = `${topDefinition}\n\nExample:\n${topExample}`
         return message.channel.send(fullMessage);
     }); 
-};
+};  
