@@ -20,5 +20,5 @@ Synchronizes user actions (Playing, Pausing, Skipping) through the use of websoc
 
 ## Examples
 
-<img src = "Discord_bot.png">
+<img src = "Discord_bot1.png">
 
