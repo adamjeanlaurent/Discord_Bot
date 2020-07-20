@@ -1,8 +1,6 @@
 # Discord Chat Bot
 A  chat bot to assist your discord server.
 
-Synchronizes user actions (Playing, Pausing, Skipping) through the use of websocket technology. 
-
 ## How It Works
 - The Stack used here is Node.js, along with Discord.js, and various APIs.
 
